@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reg/Login</title>
+</head>
+<body>
+	<div name="reg">
+		<h1>Register</h1>
+		<form action="/users" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<p>
+				<label for="first_name">First Name: </label>
+				<input type="text" name="user[first_name]">
+			</p>
+			<p>
+				<label for="last_name">Last Name: </label>
+				<input type="text" name="user[last_name]">
+			</p>
+			<p>
+				<label for="email">Email: </label>
+				<input type="email" name="user[email]">
+			</p>
+			<p>
+				<label for="password">Password: </label>
+				<input type="password" name="user[password]">
+			</p>
+			<p>
+				<label for="password_confirmation">Password Confirmation: </label>
+				<input type="password" name="user[passsword_confirmation]">
+			</p>
+			<input type="submit" name="submit">
+		</form>
+	</div>
+	<div name="login">
+		<h1>Login</h1>
+		<form action="/session" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<p>
+				<label for="email">Email: </label>
+				<input type="email" name="email">
+			</p>
+			<p>
+				<label for="password">Password: </label>
+				<input type="password" name="password">
+			</p>
+
+			<input type="submit" value="Login User">
+		</form>
+	</div>
+</body>
+</html>
